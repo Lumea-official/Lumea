@@ -976,17 +976,14 @@ const phone = document.getElementById("phone").value;
     const subject = "Nouvelle commande Luméa 🎁";
 
     const body =
-        "NOUVELLE COMMANDE LUMÉA\n\n" +
-        "Occasion : " + occasion + "\n" +
-        "Box : " + box + "\n" +
-        "Petit cadeau : " + gift + "\n" +
-        "Message : " + (message || "Aucun message") + "\n\n" +
-        "Merci de traiter cette commande.";
-
-    window.location.href =
-        "mailto:" + email +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
+    "NOUVELLE COMMANDE LUMÉA\n\n" +
+    "Client : " + name + "\n" +
+    "Téléphone : " + phone + "\n" +
+    "Occasion : " + occasion + "\n" +
+    "Box : " + box + "\n" +
+    "Petit cadeau : " + gift + "\n" +
+    "Message : " + (message || "Aucun message") + "\n\n" +
+    "Merci de traiter cette commande.";
 
 }
 </body>
