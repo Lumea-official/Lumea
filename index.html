@@ -59,30 +59,35 @@
             color: #b98f9b;
         }
 
-
         /* =========================
            BOUTONS
         ========================= */
+
+        .main-button,
+        .box-button,
+        .custom-button {
+            background-color: #b98f9b;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
         .main-button {
             display: inline-block;
             margin-top: 25px;
             padding: 14px 30px;
-            background-color: #b98f9b;
-            color: white;
-            border: none;
-            border-radius: 30px;
             text-decoration: none;
-            cursor: pointer;
             font-size: 15px;
-            transition: 0.3s;
         }
 
-        .main-button:hover {
+        .main-button:hover,
+        .box-button:hover,
+        .custom-button:hover {
             background-color: #9f727f;
             transform: translateY(-3px);
         }
-
 
         /* =========================
            HERO
@@ -140,7 +145,6 @@
             transform: translateY(-8px);
         }
 
-
         /* =========================
            SECTIONS
         ========================= */
@@ -165,8 +169,8 @@
             line-height: 1.7;
         }
 
-
-        /* =========================
+        /*
+        =========================
            COLLECTION
         ========================= */
 
@@ -233,22 +237,12 @@
             display: inline-block;
             margin-top: 20px;
             padding: 10px 24px;
-            border-radius: 25px;
-            background-color: #b98f9b;
-            color: white;
             text-decoration: none;
             font-size: 14px;
-            transition: 0.3s;
         }
 
-        .box-button:hover {
-            background-color: #9f727f;
-        }
-
-
-        /*
-=========================
-           PERSONNALISATION
+        /* =========================
+           COMMANDE
         ========================= */
 
         .custom {
@@ -271,15 +265,23 @@
             font-weight: bold;
         }
 
+        .custom-container input,
         .custom-container select,
-        .custom-container textarea,
-        .custom-container input {
+        .custom-container textarea {
             width: 100%;
             padding: 13px;
             border: 1px solid #e5d8d5;
             border-radius: 10px;
             font-family: Arial, sans-serif;
             background-color: #fffaf8;
+            color: #3b3030;
+        }
+
+        .custom-container input:focus,
+        .custom-container select:focus,
+        .custom-container textarea:focus {
+            outline: none;
+            border-color: #b98f9b;
         }
 
         .custom-container textarea {
@@ -288,29 +290,20 @@
         }
 
         .custom-button {
-            margin-top: 25px;
-            padding: 14px 30px;
-            border: none;
-            border-radius: 30px;
-            background-color: #b98f9b;
-            color: white;
-            cursor: pointer;
+            margin-top: 30px;
+            padding: 15px 32px;
             font-size: 15px;
         }
 
-        .custom-button:hover {
-            background-color: #9f727f;
-        }
-
-        #result {
-            margin-top: 25px;
+        .order-note {
+            margin-top: 20px;
             padding: 15px;
             background-color: #fdf4f4;
             border-radius: 10px;
-            display: none;
+            color: #756b64;
+            font-size: 13px;
             line-height: 1.6;
         }
-
 
         /* =========================
            A PROPOS
@@ -330,7 +323,6 @@
             color: #756b64;
             line-height: 1.9;
         }
-
 
         /* =========================
            CONTACT
@@ -353,6 +345,11 @@
             color: #756b64;
         }
 
+        .contact-link {
+            color: #b98f9b;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
         /* =========================
            FOOTER
@@ -374,9 +371,9 @@
             margin-bottom: 10px;
         }
 
-
-        /* =========================
-           TELEPHONE
+        /*
+    =========================
+           MOBILE
         ========================= */
 
         @media (max-width: 800px) {
@@ -424,7 +421,6 @@
 
 <body>
 
-
     <!-- =========================
          HEADER
     ========================= -->
@@ -445,8 +441,8 @@
                 Gift Boxes
             </a>
 
-            <a href="#personnaliser">
-                Personnaliser
+            <a href="#commander">
+                Commander
             </a>
 
             <a href="#apropos">
@@ -460,7 +456,6 @@
         </nav>
 
     </header>
-
 
 
     <!-- =========================
@@ -509,9 +504,7 @@
     </section>
 
 
-
-    <!--
-=========================
+    <!-- =========================
          COLLECTION
     ========================= -->
 
@@ -537,8 +530,7 @@
 
         <div class="boxes">
 
-
-            <!-- MINI -->
+            <!-- MINI BOX -->
 
             <div class="box">
 
@@ -560,15 +552,17 @@
                     3 000 FCFA
                 </span>
 
-                <a href="#personnaliser" class="box-button">
-                    Découvrir
+                <a
+                    href="#commander"
+                    class="box-button"
+                >
+                    Commander
                 </a>
 
             </div>
 
 
-
-            <!-- CLASSIC -->
+            <!-- CLASSIC BOX -->
 
             <div class="box">
 
@@ -589,15 +583,17 @@
                     5 000 FCFA
                 </span>
 
-                <a href="#personnaliser" class="box-button">
-                    Découvrir
+                <a
+                    href="#commander"
+                    class="box-button"
+                >
+                    Commander
                 </a>
 
             </div>
 
 
-
-            <!-- GEANTE -->
+            <!-- GEANTE BOX -->
 
             <div class="box">
 
@@ -618,8 +614,11 @@
                     8 000 – 10 000 FCFA
                 </span>
 
-                <a href="#personnaliser" class="box-button">
-                    Personnaliser
+                <a
+                    href="#commander"
+                    class="box-button"
+                >
+                    Commander
                 </a>
 
             </div>
@@ -629,17 +628,17 @@
     </section>
 
 
-
-    <!-- =========================
-         PERSONNALISATION
+    <!--
+             =========================
+         FORMULAIRE DE COMMANDE
     ========================= -->
 
-    <section class="custom" id="personnaliser">
+    <section class="custom" id="commander">
 
         <div class="section-intro">
 
             <div class="collection-label">
-                CRÉATION SUR MESURE
+                COMMANDE LUMÉA
             </div>
 
             <h2>
@@ -647,9 +646,8 @@
             </h2>
 
             <p>
-                Choisis les éléments qui correspondent
-                le mieux à la personne à qui tu souhaites
-                faire plaisir.
+                Personnalise ta box puis remplis tes informations
+                pour envoyer ta commande à Luméa.
             </p>
 
         </div>
@@ -657,361 +655,247 @@
 
         <div class="custom-container">
 
-<form
-    action="https://formsubmit.co/chaziamberly11@gmail.com"
-    method="POST"
->
-            <label for="occasion">
-                Pour quelle occasion ?
-            </label>
+            <!--
+                IMPORTANT :
+                Remplace TON-EMAIL-LUMEA par ton adresse e-mail.
+            -->
 
-            <select id="occasion">
-
-                <option>
-                    Anniversaire
-                </option>
-
-                <option>
-                    Amitié
-                </option>
-
-                <option>
-                    Remerciement
-                </option>
-
-                <option>
-                    Félicitations
-                </option>
-
-                <option>
-                    Autre occasion
-                </option>
-
-            </select>
-
-
-
-            <label for="box">
-                Quelle box ?
-            </label>
-
-            <select id="box">
-
-                <option>
-                    Mini Box — 3 000 FCFA
-                </option>
-
-                <option>
-                    Classic Box — 5 000 FCFA
-                </option>
-
-                <option>
-                    Géante Box — 8 000 à 10 000 FCFA
-                </option>
-
-            </select>
-
-
-
-            <label for="gift">
-                Choisis ton petit cadeau
-            </label>
-
-            <select id="gift">
-
-                <option>
-                    Mini parfum
-                </option>
-
-                <option>
-                    Gloss
-                </option>
-
-                <option>
-                    Chocolats
-                </option>
-
-                <option>
-                    Bonbons
-                </option>
-
-                <option>
-                    Porte-clés personnalisé
-                </option>
-
-                <option>
-                    Mug
-                </option>
-
-                <option>
-                    Carnet
-                </option>
-
-            </select>
-
-
-
-            <label for="message">
-                Ton message personnalisé
-            </label>
-
-            <textarea
-                <label for="name">
-    Ton prénom et ton nom
-</label>
-
-<input
-    type="text"
-    id="name"
-    name="name"
-    placeholder="Ex : Amber..."
-    required
->
-
-<label for="phone">
-    Ton numéro de téléphone
-</label>
-
-<input
-    type="tel"
-    id="phone"
-    name="phone"
-    placeholder="Ex : +241..."
-    required
->
-                id="message"
-                placeholder="Écris ici le petit mot que tu aimerais ajouter..."
-            ></textarea>
-
-
-
-            <button
-                class="custom-button"
-                onclick="createBox()"
+            <form
+                action="https://formsubmit.co/TON-EMAIL-LUMEA"
+                method="POST"
             >
-                Créer ma Gift Box
-            </button>
 
+                <!-- PARAMÈTRES DU FORMULAIRE -->
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="🎁 Nouvelle commande Luméa"
+                >
+
+                <input
+                    type="hidden"
+                    name="_template"
+                    value="table"
+                >
 
-            <div id="result"></div>
+                <input
+                    type="hidden"
+                    name="_captcha"
+                    value="true"
+                >
 
-        </div>
+                <input
+                    type="text"
+                    name="_honey"
+                    style="display:none"
+                    tabindex="-1"
+                    autocomplete="off"
+                >
 
-    </section>
+
+                <!-- INFORMATIONS CLIENT -->
+
+                <label for="name">
+                    Prénom et nom *
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="Nom du client"
+                    placeholder="Ex : Prénom Nom"
+                    required
+                >
 
 
+                <label for="email">
+                    Adresse e-mail *
+                </label>
 
-    <!--
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="exemple@email.com"
+                    required
+                >
 
-=========================
-         A PROPOS
-    ========================= -->
 
-    <section class="about" id="apropos">
+                <label for="phone">
+                    Numéro de téléphone *
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="Téléphone"
+                    placeholder="Ex : +241..."
+                    required
+                >
+
+
+                <!-- COMMANDE -->
 
-        <div class="about-content">
+                <label for="occasion">
+                    Pour quelle occasion ? *
+                </label>
 
-            <div class="collection-label">
-                L'UNIVERS LUMÉA
-            </div>
+                <select
+                    id="occasion"
+                    name="Occasion"
+                    required
+                >
+
+                    <option value="">
+                        Choisir une occasion
+                    </option>
+
+                    <option>
+                        Anniversaire
+                    </option>
+
+                    <option>
+                        Amitié
+                    </option>
+
+                    <option>
+                        Remerciement
+                    </option>
 
-            <h2>
-                Des cadeaux qui racontent quelque chose.
-            </h2>
+                    <option>
+                        Félicitations
+                    </option>
 
-            <p>
-                Luméa est née d'une idée simple :
-                transformer le fait d'offrir un cadeau
-                en une véritable expérience.
-            </p>
+                    <option>
+                        Autre occasion
+                    </option>
 
-            <p>
-                Chaque Gift Box est pensée pour être
-                personnalisée, afin que le cadeau
-                corresponde vraiment à la personne
-                qui le reçoit.
-            </p>
+                </select>
 
-        </div>
 
-    </section>
+                <label for="box">
+                    Quelle Gift Box ? *
+                </label>
 
+                <select
+                    id="box"
+                    name="Gift Box"
+                    required
+                >
 
+                    <option value="">
+                        Choisir une Gift Box
+                    </option>
 
-    <!-- =========================
-         CONTACT
-    ========================= -->
+                    <option>
+                        Mini Box — 3 000 FCFA
+                    </option>
 
-    <section class="contact" id="contact">
+                    <option>
+                        Classic Box — 5 000 FCFA
+                    </option>
 
-        <div class="section-intro">
+                    <option>
+                        Géante Box — 8 000 à 10 000 FCFA
+                    </option>
 
-            <div class="collection-label">
-                UNE QUESTION ?
-            </div>
+                </select>
 
-            <h2>
-                Parlons de Luméa
-            </h2>
 
-            <p>
-                Pour une question, une idée ou une demande
-                personnalisée, n'hésite pas à nous contacter.
-            </p>
+                <label for="quantity">
+                    Quantité *
+                </label>
 
-        </div>
+                <input
+                    type="number"
+                    id="quantity"
+                    name="Quantité"
+                    min="1"
+                    value="1"
+                    required
+                >
 
 
-        <div class="contact-box">
+                <label for="gift">
+                    Choisis ton petit cadeau *
+                </label>
 
-            <p>
-                📩 Email : contact@chaziamberly11@gmail.com
-            </p>
+                <select
+                    id="gift"
+                    name="Petit cadeau"
+                    required
+                >
 
-            <p>
-                📱 Instagram : @lumea
-            </p>
+                    <option value="">
+                        Choisir un cadeau
+                    </option>
 
-            <p>
-                🎁 TikTok : @by_lumea
-            </p>
+                    <option>
+                        Mini parfum
+                    </option>
 
-        </div>
+                    <option>
+                        Gloss
+                    </option>
 
-    </section>
+                    <option>
+                        Chocolats
+                    </option>
 
+                    <option>
+                        Bonbons
+                    </option>
 
+                    <option>
+                        Porte-clés personnalisé
+                    </option>
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+                    <option>
+                        Mug
+                    </option>
 
-    <footer>
+                    <option>
+                        Carnet
+                    </option>
 
-        <div class="footer-logo">
-            LUMÉA
-        </div>
+                </select>
 
-        <p>
-            Gifts made personal.
-        </p>
 
-        <p>
-            © 2026 Luméa. Tous droits réservés.
-        </p>
+                <label for="message">
+                    Ton message personnalisé
+                </label>
 
-    </footer>
+                <textarea
+                    id="message"
+                    name="Message personnalisé"
+                    placeholder="Écris ici le petit mot que tu aimerais ajouter..."
+                ></textarea>
 
 
+                <label for="delivery">
+                    Informations de livraison / remise *
+                </label>
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
+                <textarea
+                    id="delivery"
+                    name="Livraison ou remise"
+                    placeholder="Indique les informations nécessaires pour recevoir ou récupérer la commande..."
+                    required
+                ></textarea>
 
-    <script>
 
-        function createBox() {
-            
-<button
-    class="custom-button"
-    onclick="sendOrder()"
->
-    🎁 Passer ma commande
-</button>
-            const occasion =
-                document.getElementById("occasion").value;
+                <!-- BOUTON FINAL -->
 
-            const box =
-                document.getElementById("box").value;
+                <button
+                    type="submit"
+                    class="custom-button"
+                >
+                    🎁 Passer ma commande
+                </button>
 
-            const gift =
-                document.getElementById("gift").value;
 
-            const message =
-                document.getElementById("message").value;
+                <div class="order-note">
 
-            const result =
-                document.getElementById("result");
-
-
-            result.style.display = "block";
-
-
-            result.innerHTML =
-                "<strong>✨ Ta création Luméa</strong><br><br>" +
-
-                "Occasion : " + occasion + "<br>" +
-
-                "Box : " + box + "<br>" +
-
-                "Petit cadeau : " + gift + "<br><br>" +
-
-                "Message : " +
-                (message || "Aucun message ajouté.") +
-
-                "<br><br>" +
-
-                "💗 Ta personnalisation est prête !";
-
-        }
-
-    </script>
-
-
-</script>
-<!-- =========================
-     SYSTÈME DE COMMANDE LUMÉA
-========================= -->
-
-<script>
-
-<script>
-
-function sendOrder() {
-
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
-    const occasion = document.getElementById("occasion").value;
-    const box = document.getElementById("box").value;
-    const gift = document.getElementById("gift").value;
-    const message = document.getElementById("message").value;
-
-    const form = document.createElement("form");
-
-    form.method = "POST";
-
-    form.action = "https://formsubmit.co/chaziamberly11@gmail.com";
-
-    const fields = {
-        "_subject": "🎁 Nouvelle commande Luméa",
-        "_template": "table",
-        "_captcha": "true",
-        "Nom du client": name,
-        "Téléphone": phone,
-        "Occasion": occasion,
-        "Gift Box": box,
-        "Petit cadeau": gift,
-        "Message personnalisé": message || "Aucun message"
-    };
-
-    for (const key in fields) {
-
-        const input = document.createElement("input");
-
-        input.type = "hidden";
-        input.name = key;
-        input.value = fields[key];
-
-        form.appendChild(input);
-    }
-
-    document.body.appendChild(form);
-
-    form.submit();
-}
-
-</script>
-}
-</body>
-
-</html>
+                    💗 En cliquant sur « Passer ma commande »,
+                    les informations seront envoyées   
