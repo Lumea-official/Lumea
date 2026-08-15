@@ -924,7 +924,39 @@
         }
 
     </script>
+<!-- =========================
+     SYSTÈME DE COMMANDE LUMÉA
+========================= -->
 
+<script>
+
+function sendOrder() {
+
+    const occasion = document.getElementById("occasion").value;
+    const box = document.getElementById("box").value;
+    const gift = document.getElementById("gift").value;
+    const message = document.getElementById("message").value;
+
+    const email = "chaziamberly11@gmail.com";
+
+    const subject = "Nouvelle commande Luméa 🎁";
+
+    const body =
+        "NOUVELLE COMMANDE LUMÉA\n\n" +
+        "Occasion : " + occasion + "\n" +
+        "Box : " + box + "\n" +
+        "Petit cadeau : " + gift + "\n" +
+        "Message : " + (message || "Aucun message") + "\n\n" +
+        "Merci de traiter cette commande.";
+
+    window.location.href =
+        "mailto:" + email +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+}
+
+</script>
 
 </body>
 
