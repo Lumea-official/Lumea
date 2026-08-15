@@ -965,29 +965,52 @@
 
 <script>
 
+<script>
+
 function sendOrder() {
 
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
     const occasion = document.getElementById("occasion").value;
     const box = document.getElementById("box").value;
     const gift = document.getElementById("gift").value;
     const message = document.getElementById("message").value;
-    const name = document.getElementById("name").value;
-const phone = document.getElementById("phone").value;
 
-    const email = "chaziamberly11@gmail.com";
+    const form = document.createElement("form");
 
-    const subject = "Nouvelle commande Luméa 🎁";
+    form.method = "POST";
 
-    const body =
-    "NOUVELLE COMMANDE LUMÉA\n\n" +
-    "Client : " + name + "\n" +
-    "Téléphone : " + phone + "\n" +
-    "Occasion : " + occasion + "\n" +
-    "Box : " + box + "\n" +
-    "Petit cadeau : " + gift + "\n" +
-    "Message : " + (message || "Aucun message") + "\n\n" +
-    "Merci de traiter cette commande.";
+    form.action = "https://formsubmit.co/chaziamberly11@gmail.com";
 
+    const fields = {
+        "_subject": "🎁 Nouvelle commande Luméa",
+        "_template": "table",
+        "_captcha": "true",
+        "Nom du client": name,
+        "Téléphone": phone,
+        "Occasion": occasion,
+        "Gift Box": box,
+        "Petit cadeau": gift,
+        "Message personnalisé": message || "Aucun message"
+    };
+
+    for (const key in fields) {
+
+        const input = document.createElement("input");
+
+        input.type = "hidden";
+        input.name = key;
+        input.value = fields[key];
+
+        form.appendChild(input);
+    }
+
+    document.body.appendChild(form);
+
+    form.submit();
+}
+
+</script>
 }
 </body>
 
