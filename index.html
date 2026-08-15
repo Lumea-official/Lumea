@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Luméa | Gifts made personal.</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fffaf8;
+            color: #3b3030;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fffaf8;
+            border-bottom: 1px solid #eee2df;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 6px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #3b3030;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #b98f9b;
+        }
+
+
+        /* =========================
+           BOUTONS
+        ========================= */
+
+        .main-button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 30px;
+            background-color: #b98f9b;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .main-button:hover {
+            background-color: #9f727f;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 90vh;
+            padding: 90px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 70px;
+        }
+
+        .hero-text {
+            max-width: 520px;
+        }
+
+        .small-title {
+            color: #b98f9b;
+            letter-spacing: 4px;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            letter-spacing: 12px;
+            margin: 15px 0;
+        }
+
+        .slogan {
+            font-size: 22px;
+            font-style: italic;
+            color: #756b64;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #756b64;
+        }
+
+        .hero-image {
+            max-width: 500px;
+            width: 100%;
+            border-radius: 25px;
+            padding: 15px;
+            background-color: white;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
+            transition: 0.4s;
+        }
+
+        .hero-image:hover {
+            transform: translateY(-8px);
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .section-intro h2 {
+            font-size: 38px;
+            margin: 10px 0 20px;
+        }
+
+        .section-intro p {
+            color: #756b64;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           COLLECTION
+        ========================= */
+
+        .collection {
+            background-color: #fdf4f4;
+        }
+
+        .collection-label {
+            color: #b98f9b;
+            letter-spacing: 4px;
+            font-size: 13px;
+        }
+
+        .boxes {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            background-color: white;
+            padding: 30px;
+            width: 290px;
+            min-height: 300px;
+            border: 1px solid #eee2df;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+        }
+
+        .box-icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .box h3 {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        .box p {
+            color: #756b64;
+            line-height: 1.7;
+            min-height: 75px;
+        }
+
+        .price {
+            display: block;
+            margin-top: 20px;
+            font-size: 19px;
+            font-weight: bold;
+            color: #3b3030;
+        }
+
+        .box-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 24px;
+            border-radius: 25px;
+            background-color: #b98f9b;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .box-button:hover {
+            background-color: #9f727f;
+        }
+
+
+        /*
+=========================
+           PERSONNALISATION
+        ========================= */
+
+        .custom {
+            background-color: #fffaf8;
+        }
+
+        .custom-container {
+            max-width: 900px;
+            margin: 45px auto 0;
+            background-color: white;
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        .custom-container label {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .custom-container select,
+        .custom-container textarea,
+        .custom-container input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #e5d8d5;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+            background-color: #fffaf8;
+        }
+
+        .custom-container textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .custom-button {
+            margin-top: 25px;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 30px;
+            background-color: #b98f9b;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .custom-button:hover {
+            background-color: #9f727f;
+        }
+
+        #result {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #fdf4f4;
+            border-radius: 10px;
+            display: none;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           A PROPOS
+        ========================= */
+
+        .about {
+            background-color: #fdf4f4;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .about-content p {
+            color: #756b64;
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 650px;
+            margin: 40px auto 0;
+            padding: 35px;
+            background-color: white;
+            border: 1px solid #eee2df;
+            border-radius: 18px;
+        }
+
+        .contact-box p {
+            color: #756b64;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #eee2df;
+            color: #756b64;
+            font-size: 14px;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            letter-spacing: 5px;
+            font-weight: bold;
+            color: #3b3030;
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           TELEPHONE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 18px;
+                padding: 20px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 70px 20px;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+                letter-spacing: 7px;
+            }
+
+            .hero-image {
+                width: 90%;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+
+            .custom-container {
+                padding: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <div class="logo">
+            LUMÉA
+        </div>
+
+        <nav>
+
+            <a href="#accueil">
+                Accueil
+            </a>
+
+            <a href="#collection">
+                Gift Boxes
+            </a>
+
+            <a href="#personnaliser">
+                Personnaliser
+            </a>
+
+            <a href="#apropos">
+                À propos
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         ACCUEIL
+    ========================= -->
+
+    <section class="hero" id="accueil">
+
+        <div class="hero-text">
+
+            <div class="small-title">
+                Première collection
+            </div>
+
+            <h1>
+                LUMÉA
+            </h1>
+
+            <p class="slogan">
+                Gifts made personal.
+            </p>
+
+            <p class="hero-description">
+                Des cadeaux pensés avec amour,
+                pour rendre chaque occasion
+                encore plus spéciale.
+            </p>
+
+            <a href="#collection" class="main-button">
+                Découvrir les Gift Boxes
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <img
+                src="giftbox.jpg"
+                alt="Gift Box Luméa"
+                class="hero-image"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!--
+=========================
+         COLLECTION
+    ========================= -->
+
+    <section class="collection" id="collection">
+
+        <div class="section-intro">
+
+            <div class="collection-label">
+                PREMIÈRE COLLECTION
+            </div>
+
+            <h2>
+                L'ANNIVERSAIRE
+            </h2>
+
+            <p>
+                Des Gift Boxes imaginées pour célébrer
+                les personnes qui comptent.
+            </p>
+
+        </div>
+
+
+        <div class="boxes">
+
+
+            <!-- MINI -->
+
+            <div class="box">
+
+                <div class="box-icon">
+                    🎀
+                </div>
+
+                <h3>
+                    Mini Box
+                </h3>
+
+                <p>
+                    Une petite attention pleine
+                    de douceur pour faire plaisir
+                    à quelqu'un.
+                </p>
+
+                <span class="price">
+                    3 000 FCFA
+                </span>
+
+                <a href="#personnaliser" class="box-button">
+                    Découvrir
+                </a>
+
+            </div>
+
+
+
+            <!-- CLASSIC -->
+
+            <div class="box">
+
+                <div class="box-icon">
+                    🎁
+                </div>
+
+                <h3>
+                    Classic Box
+                </h3>
+
+                <p>
+                    L'équilibre parfait pour offrir
+                    une jolie surprise personnalisée.
+                </p>
+
+                <span class="price">
+                    5 000 FCFA
+                </span>
+
+                <a href="#personnaliser" class="box-button">
+                    Découvrir
+                </a>
+
+            </div>
+
+
+
+            <!-- GEANTE -->
+
+            <div class="box">
+
+                <div class="box-icon">
+                    ✨
+                </div>
+
+                <h3>
+                    Géante Box
+                </h3>
+
+                <p>
+                    Une grande box pensée pour
+                    marquer vraiment le coup.
+                </p>
+
+                <span class="price">
+                    8 000 – 10 000 FCFA
+                </span>
+
+                <a href="#personnaliser" class="box-button">
+                    Personnaliser
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PERSONNALISATION
+    ========================= -->
+
+    <section class="custom" id="personnaliser">
+
+        <div class="section-intro">
+
+            <div class="collection-label">
+                CRÉATION SUR MESURE
+            </div>
+
+            <h2>
+                Crée ta Gift Box
+            </h2>
+
+            <p>
+                Choisis les éléments qui correspondent
+                le mieux à la personne à qui tu souhaites
+                faire plaisir.
+            </p>
+
+        </div>
+
+
+        <div class="custom-container">
+
+
+            <label for="occasion">
+                Pour quelle occasion ?
+            </label>
+
+            <select id="occasion">
+
+                <option>
+                    Anniversaire
+                </option>
+
+                <option>
+                    Amitié
+                </option>
+
+                <option>
+                    Remerciement
+                </option>
+
+                <option>
+                    Félicitations
+                </option>
+
+                <option>
+                    Autre occasion
+                </option>
+
+            </select>
+
+
+
+            <label for="box">
+                Quelle box ?
+            </label>
+
+            <select id="box">
+
+                <option>
+                    Mini Box — 3 000 FCFA
+                </option>
+
+                <option>
+                    Classic Box — 5 000 FCFA
+                </option>
+
+                <option>
+                    Géante Box — 8 000 à 10 000 FCFA
+                </option>
+
+            </select>
+
+
+
+            <label for="gift">
+                Choisis ton petit cadeau
+            </label>
+
+            <select id="gift">
+
+                <option>
+                    Mini parfum
+                </option>
+
+                <option>
+                    Gloss
+                </option>
+
+                <option>
+                    Chocolats
+                </option>
+
+                <option>
+                    Bonbons
+                </option>
+
+                <option>
+                    Porte-clés personnalisé
+                </option>
+
+                <option>
+                    Mug
+                </option>
+
+                <option>
+                    Carnet
+                </option>
+
+            </select>
+
+
+
+            <label for="message">
+                Ton message personnalisé
+            </label>
+
+            <textarea
+                id="message"
+                placeholder="Écris ici le petit mot que tu aimerais ajouter..."
+            ></textarea>
+
+
+
+            <button
+                class="custom-button"
+                onclick="createBox()"
+            >
+                Créer ma Gift Box
+            </button>
+
+
+            <div id="result"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!--
+
+=========================
+         A PROPOS
+    ========================= -->
+
+    <section class="about" id="apropos">
+
+        <div class="about-content">
+
+            <div class="collection-label">
+                L'UNIVERS LUMÉA
+            </div>
+
+            <h2>
+                Des cadeaux qui racontent quelque chose.
+            </h2>
+
+            <p>
+                Luméa est née d'une idée simple :
+                transformer le fait d'offrir un cadeau
+                en une véritable expérience.
+            </p>
+
+            <p>
+                Chaque Gift Box est pensée pour être
+                personnalisée, afin que le cadeau
+                corresponde vraiment à la personne
+                qui le reçoit.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-intro">
+
+            <div class="collection-label">
+                UNE QUESTION ?
+            </div>
+
+            <h2>
+                Parlons de Luméa
+            </h2>
+
+            <p>
+                Pour une question, une idée ou une demande
+                personnalisée, n'hésite pas à nous contacter.
+            </p>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <p>
+                📩 Email : contact@chaziamberly11@gmail.com
+            </p>
+
+            <p>
+                📱 Instagram : @lumea
+            </p>
+
+            <p>
+                🎁 TikTok : @by_lumea
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            LUMÉA
+        </div>
+
+        <p>
+            Gifts made personal.
+        </p>
+
+        <p>
+            © 2026 Luméa. Tous droits réservés.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        function createBox() {
+
+            const occasion =
+                document.getElementById("occasion").value;
+
+            const box =
+                document.getElementById("box").value;
+
+            const gift =
+                document.getElementById("gift").value;
+
+            const message =
+                document.getElementById("message").value;
+
+            const result =
+                document.getElementById("result");
+
+
+            result.style.display = "block";
+
+
+            result.innerHTML =
+                "<strong>✨ Ta création Luméa</strong><br><br>" +
+
+                "Occasion : " + occasion + "<br>" +
+
+                "Box : " + box + "<br>" +
+
+                "Petit cadeau : " + gift + "<br><br>" +
+
+                "Message : " +
+                (message || "Aucun message ajouté.") +
+
+                "<br><br>" +
+
+                "💗 Ta personnalisation est prête !";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
